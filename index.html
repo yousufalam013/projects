@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button onclick="turnon()"> Batti </button>
+        <button onclick="turnoff()"> Batti Offf </button>
+    </div>
+    <div class="bulb">
+        <img src="pic_bulbon.gif" alt="">
+    </div>
+    Enter first Number <input id="i1" type="number"> <br>
+    Enter 2nd Number <input id="i2" type="number"> <br>
+    Operation <input id="i3" type="text"> <br>
+    <button onclick="calculate()"> Calculate Please</button>
+    <h2 id="i4">Result is </h2>
+    <script>
+        function turnon() {
+            document.querySelector(".bulb").innerHTML = `<img src="pic_bulbon.gif" alt="">`;
+        }
+        function turnoff() {
+            document.querySelector(".bulb").innerHTML = `<img src="pic_bulboff.gif" alt="">`;
+        }
+        function calculate() {
+            let v1 = document.querySelector("#i1").value;
+            let v2 = document.querySelector("#i2").value;
+            let v4 = document.querySelector("#i3").value;
+            let v3;
+            if (v4 === "+") {
+                v3 = +v1 + +v2;
+            } else if (v4 === "-") {
+                v3 = +v1 - +v2;
+            } else if (v4 === "*") {
+                v3 = +v1 * +v2;
+            } else {
+                v3 = +v1 / +v2
+            }
+
+            document.querySelector("#i4").innerHTML = v3;
+        }
+    </script>
+</body>
+
+</html>
